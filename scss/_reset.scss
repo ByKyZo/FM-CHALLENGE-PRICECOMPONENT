@@ -1,0 +1,64 @@
+* ,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 28, 29);
+    color: $GrayishBlue;
+}
+
+.container{
+    width: 1440px;
+    height: 800px;
+    background-image : url("../images/bg-pattern.svg");
+    background-repeat: no-repeat;
+    background-color: $VeryPaleBlue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    position: relative;
+    &__center{
+        width: 542px;
+        @media(max-width: 600px){
+            width: 100%;
+            padding: 0 30px;
+        }
+    }
+    &__heading{
+        margin-bottom: 90px;
+        text-align: center;
+        position: relative;
+        z-index: 999;
+        &__title{
+            font-size: 1.8rem;
+            color: $DarkDesaturatedBlue;
+            @media(max-width: 465px){
+                font-size: 1.6rem;
+            }
+            @media(max-width: 420px){
+                font-size: 1.4rem;
+            }
+        }
+        &__subtitle{
+            font-size: 0.9rem;
+            font-weight: lighter;
+            @media(max-width: 415px){
+                font-size: 0.8rem;
+            }
+        }
+        &__pattern{
+            position: absolute;
+            z-index: -1;
+            top: -64%;
+            left: 37%;
+        }
+    }
+}

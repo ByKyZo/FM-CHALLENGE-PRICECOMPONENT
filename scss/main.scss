@@ -1,0 +1,215 @@
+@import './variables';
+@import './reset';
+
+.price__component{
+    min-height: 400px;
+    width: 100%; // 542px
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    position: relative;
+    &__top{
+        border-bottom: 1px solid $LightGrayishBlue2;
+        padding: 44px 45px;
+        @media(max-width: 600px){
+            padding: 44px 30px;
+        }
+        &__heading{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media(max-width: 600px){
+                justify-content: center;
+            }
+            &__pageviews{ 
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+                font-size: 0.9rem;
+            }
+            &__permonth{
+                display: flex;
+                align-items: center;
+                @media(max-width: 600px){
+                    position: absolute;
+                    // bottom: 60px;
+                    top: 130px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    justify-content: center;
+                    width: 100%;
+                }
+                #pricePerMonth{
+                    font-weight: bold;
+                    color: $DarkDesaturatedBlue;
+                    font-size: 2.4rem;
+                    margin-right: 5px;
+                }
+            }
+        }
+        &__options{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            @media(max-width: 600px){
+                margin-top: 110px;
+            }
+            &__item{
+                font-size: 0.8rem;
+                @media(max-width: 440px){
+                    font-size: 0.6rem;
+                }
+                @media(max-width: 380px){
+                    font-size: 0.55rem;
+                }
+                .discount{
+                    color: $LightRed;
+                    background-color: rgba(255, 140, 102, .2);
+                    border-radius: 9999px;
+                    margin-left: 10px;
+                    margin-right: 6px;
+                    padding: 0 8px;
+                    .discount-mobile{
+                        display: none;
+                    }
+                    @media(max-width: 600px){
+                        .discount-desktop{
+                            display: none;
+                        }
+                        .discount-mobile{
+                            display: unset;
+                        }
+                    }
+                }
+            }
+            &__btn{
+                cursor: pointer;
+                margin: 0 15px;
+                height: 23px;
+                width: 44px;
+                border-radius: 9999px;
+                background-color: $LightGrayishBlue2;
+                position: relative;
+                transition: 0.3s;
+                &:hover{
+                    // rgb(16, 213, 194)
+                    // background-color: $StrongCyan;
+                    box-shadow: 0 0 10px rgba(16, 213, 194, .5);
+                }
+                #bullet{
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: white;
+                    position: absolute;
+                    top: 4px;
+                    left: 4px;
+                    transition: left 0.3s;
+                    // transform: translate(4px, 4px);
+                }
+            }
+        }
+    }
+    &__bottom{
+        padding: 24px 45px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        @media(max-width: 600px){
+            flex-direction: column;
+            text-align: center;
+            padding: 24px 30px;
+        }
+        &__list{
+            list-style-type: none;
+            @media(max-width: 600px){
+                margin-bottom: 20px;
+            }
+            li{
+                margin: 8px 0;
+                img{
+                    margin-right: 8px;
+                }
+            }
+        }
+        &__btn{
+            cursor: pointer;
+            background-color: $DarkDesaturatedBlue;
+            color: white;
+            padding: 12px 45px;
+            border-radius: 9999px;
+            transition: box-shadow 0.5s;
+            &:hover{
+                transition: 0.2s;
+                box-shadow: 0 0 10px $DarkDesaturatedBlue;
+            }
+            &:active{
+                transition: 0.1s;
+                background-color : hsl(227, 32%, 12%);
+            }
+        }
+    }
+}
+
+#btn-slider.active #bullet{
+    transition: left 0.3s;
+    left: 25px;
+}
+
+#btn-slider.active{
+    transition: 0.3s;
+    background-color: $StrongCyan;
+}
+
+// CONTAINER INPUT / PROGRESSBAR
+.price-wrapper{
+    position: relative;
+    margin: 40px 0;
+    @media(max-width: 600px){
+        margin: 25px 0;
+    }
+}
+
+// PROGRESS BAR
+#progressBar{
+    width: 100%;
+    height: 8px;
+    background-color: $SoftCyan;;
+    position: absolute;
+    border-radius: 9999px;
+    top: 9px;
+    width: 50%;
+}
+
+// STYLE INPUT RANGE
+#priceRange{
+    outline: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+}
+
+#priceRange::-webkit-slider-thumb{
+    appearance: none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: $StrongCyan;
+    background-image: url("../images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 5px 30px $StrongCyan;
+    margin-top: -16px;
+    position: relative;
+    z-index: 999;
+}
+#priceRange::-webkit-slider-runnable-track {
+    background: $LightGrayishBlue ;
+    border: 0;
+    border-radius: 9999px;
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+}

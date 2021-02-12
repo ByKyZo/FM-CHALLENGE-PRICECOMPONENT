@@ -1,0 +1,299 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f1c1d;
+  color: #858fad;
+}
+
+.container {
+  width: 1440px;
+  height: 800px;
+  background-image: url("../images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-color: #fafbff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container__center {
+  width: 542px;
+}
+@media (max-width: 600px) {
+  .container__center {
+    width: 100%;
+    padding: 0 30px;
+  }
+}
+.container__heading {
+  margin-bottom: 90px;
+  text-align: center;
+  position: relative;
+  z-index: 999;
+}
+.container__heading__title {
+  font-size: 1.8rem;
+  color: #293356;
+}
+@media (max-width: 465px) {
+  .container__heading__title {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 420px) {
+  .container__heading__title {
+    font-size: 1.4rem;
+  }
+}
+.container__heading__subtitle {
+  font-size: 0.9rem;
+  font-weight: lighter;
+}
+@media (max-width: 415px) {
+  .container__heading__subtitle {
+    font-size: 0.8rem;
+  }
+}
+.container__heading__pattern {
+  position: absolute;
+  z-index: -1;
+  top: -64%;
+  left: 37%;
+}
+
+.price__component {
+  min-height: 400px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+}
+.price__component__top {
+  border-bottom: 1px solid #cdd7ee;
+  padding: 44px 45px;
+}
+@media (max-width: 600px) {
+  .price__component__top {
+    padding: 44px 30px;
+  }
+}
+.price__component__top__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .price__component__top__heading {
+    justify-content: center;
+  }
+}
+.price__component__top__heading__pageviews {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+.price__component__top__heading__permonth {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .price__component__top__heading__permonth {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    width: 100%;
+  }
+}
+.price__component__top__heading__permonth #pricePerMonth {
+  font-weight: bold;
+  color: #293356;
+  font-size: 2.4rem;
+  margin-right: 5px;
+}
+.price__component__top__options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .price__component__top__options {
+    margin-top: 110px;
+  }
+}
+.price__component__top__options__item {
+  font-size: 0.8rem;
+}
+@media (max-width: 440px) {
+  .price__component__top__options__item {
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: 380px) {
+  .price__component__top__options__item {
+    font-size: 0.55rem;
+  }
+}
+.price__component__top__options__item .discount {
+  color: #ff8c66;
+  background-color: rgba(255, 140, 102, 0.2);
+  border-radius: 9999px;
+  margin-left: 10px;
+  margin-right: 6px;
+  padding: 0 8px;
+}
+.price__component__top__options__item .discount .discount-mobile {
+  display: none;
+}
+@media (max-width: 600px) {
+  .price__component__top__options__item .discount .discount-desktop {
+    display: none;
+  }
+  .price__component__top__options__item .discount .discount-mobile {
+    display: unset;
+  }
+}
+.price__component__top__options__btn {
+  cursor: pointer;
+  margin: 0 15px;
+  height: 23px;
+  width: 44px;
+  border-radius: 9999px;
+  background-color: #cdd7ee;
+  position: relative;
+  transition: 0.3s;
+}
+.price__component__top__options__btn:hover {
+  box-shadow: 0 0 10px rgba(16, 213, 194, 0.5);
+}
+.price__component__top__options__btn #bullet {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.3s;
+}
+.price__component__bottom {
+  padding: 24px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+@media (max-width: 600px) {
+  .price__component__bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 30px;
+  }
+}
+.price__component__bottom__list {
+  list-style-type: none;
+}
+@media (max-width: 600px) {
+  .price__component__bottom__list {
+    margin-bottom: 20px;
+  }
+}
+.price__component__bottom__list li {
+  margin: 8px 0;
+}
+.price__component__bottom__list li img {
+  margin-right: 8px;
+}
+.price__component__bottom__btn {
+  cursor: pointer;
+  background-color: #293356;
+  color: white;
+  padding: 12px 45px;
+  border-radius: 9999px;
+  transition: box-shadow 0.5s;
+}
+.price__component__bottom__btn:hover {
+  transition: 0.2s;
+  box-shadow: 0 0 10px #293356;
+}
+.price__component__bottom__btn:active {
+  transition: 0.1s;
+  background-color: #151928;
+}
+
+#btn-slider.active #bullet {
+  transition: left 0.3s;
+  left: 25px;
+}
+
+#btn-slider.active {
+  transition: 0.3s;
+  background-color: #10d5c2;
+}
+
+.price-wrapper {
+  position: relative;
+  margin: 40px 0;
+}
+@media (max-width: 600px) {
+  .price-wrapper {
+    margin: 25px 0;
+  }
+}
+
+#progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: #a5f3eb;
+  position: absolute;
+  border-radius: 9999px;
+  top: 9px;
+  width: 50%;
+}
+
+#priceRange {
+  outline: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+}
+
+#priceRange::-webkit-slider-thumb {
+  appearance: none;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #10d5c2;
+  background-image: url("../images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 5px 30px #10d5c2;
+  margin-top: -16px;
+  position: relative;
+  z-index: 999;
+}
+
+#priceRange::-webkit-slider-runnable-track {
+  background: #eaeefb;
+  border: 0;
+  border-radius: 9999px;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
